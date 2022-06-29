@@ -1,14 +1,3 @@
-<style>
-    
-smoky-black {color: #0a0903ff;}
-red {color: red;}
-orange {color: #ff8200ff;}
-amber {color: #ffc100ff;}
-banana-mania {color: #ffeaaeff;}
-img[alt=MotoStoreLogo] { width: 500px;
-                        display: flex; }
-</style>
-
 # E-Commerce Marco Albertini
 ## Tienda Web de indumentaria para motos y cuatriciclos
 ![MotoStoreLogo](assets/images/MotoStore-logos_white.png)
