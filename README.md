@@ -4,23 +4,30 @@
 #     *MotoStore*
 
 
-## <amber>*Fast and Safe!*
+## *Fast and Safe!*
 ---
-<orange>MotoStore llega a los usuarios para brindar el mejor precio y calidad de productos de indumentaria para motos, cuatriciclos y deportes extremos!
+MotoStore llega a los usuarios para brindar el mejor precio y calidad de productos de indumentaria para motos, cuatriciclos y deportes extremos!
 
-<orange>Contamos con marcas lideres en el mercado como:
-- <red>AGV
-- <red>Shoei
-- <red>Arai
-- <red>Dainese
-- <red>Alpinestars
-- <red>Fox
-- <red>Troy Lee Design
+Contamos con marcas lideres en el mercado como:
+- AGV
+- Shoei
+- Arai
+- Dainese
+- Alpinestars
+- Fox
+- Troy Lee Design
   
-  > <amber>Brindamos el mejor soporte y asesoramiento para que siempres tengas la oportunidad de emprender tu aventura con el mejor equipo del mercado!
+  > Brindamos el mejor soporte y asesoramiento para que siempres tengas la oportunidad de emprender tu aventura con el mejor equipo del mercado!
 
   ---
-<yellow>**Publico: Riders de cualquier *edad y genero.***
+**Publico: Riders de cualquier *edad y genero.***
+
+**Fonts: https://www.dafont.com/es/a-area-kilometer-50.font**
+
+**Paleta de colores: https://colorhunt.co/palette/1b1a17f0a500e45826e6d5b8**
+
+
+
    
 
 
