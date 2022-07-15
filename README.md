@@ -22,11 +22,11 @@ Contamos con marcas lideres en el mercado como:
   ---
 **Publico: Riders de cualquier *edad y genero.***
 
-**Fonts: https://www.dafont.com/es/a-area-kilometer-50.font**
+**Fonts: Inter**
 
 **Paleta de colores: https://colorhunt.co/palette/1b1a17f0a500e45826e6d5b8**
 
-
+**Figma: https://www.figma.com/file/xtKoPOilvhqHD8T3qXsHPQ/BOCETOS-PARA-ECOMMERCE?node-id=1%3A2**
 
    
 
