@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@600&display=swap');
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arimo', sans-serif;   
+}
+
+:root {
+    --primary: #F0A500;
+    --secondary: #E45826;
+    --terceary: #E6D5B8;
+    --fourth: #1B1A17;
+}
+
+section {
+
+    max-width: 60%;
+    background-color: #E6D5B8;
+
+
+}
+
+img {
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+#producto {
+    color: var(--fourth);
+    margin: 10%;
+    justify-content: center;
+    display: flex;
+    border-radius: 10px;
+    padding: 5%;
+} 
+
+#logo {
+    width: 100%;
+    background-color: var(--fourth);
+    padding: 2px;
+}
+
+article {
+    max-width: 30%;
+    background-color: var(--primary);
+    border-radius: 10px;
+    margin: 30px;
+    display: block;
+
+}
+
+header {
+    margin-top: 0;
+    background-color: var(--fourth);
+    color: var(--secondary);
+    display: flex;
+    justify-content: space-around;
+}
+
+footer {
+    background-color: var(--fourth);
+    color: var(--secondary);    
+    display: flex;
+
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary);    
+}
+
+li {
+    display:inline;
+    padding: 20px;
+}
+button {
+    background-color: var(--secondary);
+    color: var(--terceary);
+    border-radius: 10px;
+    border-color: var(--secondary);
+    width: 40%;
+    height: 5%;
+}
+
+.picture {
+    background-color: var(--terceary);
+    justify-content: center;
+    border-radius: 10px;
+    justify-items: center;
+}
+
+.description {
+display: flex;
+}
+
+main {
+    display: inline;
+}
+
+.listado {
+    display: flex;
+
+}
