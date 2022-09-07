@@ -1,0 +1,25 @@
+{
+  "name": "trabajo-integrador",
+  "version": "1.0.0",
+  "description": "E-Commerce MotoStore Trabajo Integrador Icaro",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marco53940/albertini-motostore.git"
+  },
+  "author": "Marco R Albertini",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "bugs": {
+    "url": "https://github.com/Marco53940/albertini-motostore/issues"
+  },
+  "homepage": "https://github.com/Marco53940/albertini-motostore#readme"
+}
