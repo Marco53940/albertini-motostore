@@ -1,0 +1,37 @@
+[{
+    "id": 1,
+    "nombre": "Casco",
+    "descripcion": "descripcion del producto",
+    "precio": 3000
+},
+{
+    "id": 2,
+    "nombre": "Guantes",
+    "descripcion": "descripcion del producto 2",
+    "precio": 3000
+
+},{
+    "id": 3,
+    "nombre": "Botas",
+    "descripcion": "descripcion del producto 3",
+    "precio": 3000
+},
+{
+    "id": 4,
+    "nombre": "Campera",
+    "descripcion": "descripcion del producto 4",
+    "precio": 3000
+
+},{
+    "id": 5,
+    "nombre": "Pantalon",
+    "descripcion": "descripcion del producto 5",
+    "precio": 3000
+},
+{
+    "id": 6,
+    "nombre": "Bolso",
+    "descripcion": "descripcion del producto 6",
+    "precio": 3000
+
+}]
