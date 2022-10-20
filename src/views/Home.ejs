@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include('./partials/Head.ejs');%>
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/Header.ejs');%>
+    </header>
+    <main>
+        <div class="logo">
+          <img
+            style="margin: 2px; max-width: 8%; border-radius: 50%"
+            id="main-logo"
+            src="/images/MotoStore-logos.jpeg"
+            alt="main-logo"
+          />
+        </div>
+        <h2>Productos</h2>
+        <div class="listado">
+          <article>
+            <div class="picture">
+              <img
+                class="product-image"
+                src="/images/product_1.jpg"
+                alt="product-1"
+              />
+            </div>
+            <div class="buttons">
+              <button><i class="material-icons">shopping_cart</i></button>
+              <button>Ver Mas</button>
+            </div>
+          </article>
+          <article>
+            <div class="picture">
+              <img
+                class="product-image"
+                src="/images/product_1.jpg"
+                alt="product-1"
+              />
+            </div>
+            <div class="buttons">
+              <button><i class="material-icons">shopping_cart</i></button>
+              <button>Ver Mas</button>
+            </div>
+          </article>
+          <article>
+            <div class="picture">
+              <img
+                class="product-image"
+                src="/images/product_1.jpg"
+                alt="product-1"
+              />
+            </div>
+            <div class="buttons">
+              <button><i class="material-icons">shopping_cart</i></button>
+              <button>Ver Mas</button>
+            </div>
+          </article>
+        </div>
+      </main>
+</body>
+<footer>
+    <%-include('./partials/Footer.ejs');%>
+</footer>
+
+</html>

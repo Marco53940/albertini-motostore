@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%-include('./partials/Head.ejs');%>
+    </head>
+  <body>
+    <header>
+        <%- include('./partials/Header.ejs');%>
+    </header>
+    <section class="producto">      
+      <div class="product-image">        
+        <img src="/images/product_1.jpg" alt="image-producto" />
+      </div>
+      <div class="product-description">
+        <h2 class="product-title">AGV PistaGRP</h2>
+        <div>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis veritatis accusamus unde facilis repudiandae debitis quis rerum repellendus tempore exercitationem, aspernatur itaque rem suscipit minus fuga pariatur totam amet voluptatibus.</p>
+        </div>
+        <div>
+          <p>$999.99</p>
+        </div>          
+        <div class="buttons">
+          <button><i class="material-icons">shopping_cart</i></button>
+          <button>comprar</button>
+        </div>
+      </div>
+    </section>
+    <footer>
+        <footer>
+            <%-include('./partials/Footer.ejs');%>
+        </footer>
+  </body>
+</html>

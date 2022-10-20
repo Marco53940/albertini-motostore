@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%-include('./partials/Head.ejs');%>
+    </head>
+  <body>
+    <header>
+        <%- include('./partials/Header.ejs');%>
+    </header>
+    <main>
+      <div class="logo">
+        <img
+          style="margin: 2px; max-width: 8%; border-radius: 50%"
+          id="main-logo"
+          src="/images/MotoStore-logos.jpeg"
+          alt="main-logo"
+        />
+      </div>
+      <div class="login">
+        <form class="login-form">
+            <input class="login-input" type="text" name="email" placeholder="Email">
+            <input class="login-input" type="password" name="password" placeholder="Password">
+            <input type="button" class="login-buttons" value="Ingresar">
+        </form>
+        <button class="login-buttons">Registrarse</button>
+        <button class="login-buttons">Olvide mi contraseña</button>
+      </div>
+    </main>
+    <footer>
+        <%-include('./partials/Footer.ejs');%>
+    </footer>
+  </body>
+</html>
