@@ -1,3 +1,6 @@
+
+
+
 const renderHomeView = (req, res) => {
     return res.render('Home.ejs');
 }
@@ -14,15 +17,12 @@ const renderRegisterView = (req, res) => {
     return res.render('Register.ejs');
 }
 
-const renderProductsView = (req, res) => {
-    return res.render('Detail_products.ejs');
-}
+
 
 
 module.exports = {
     renderHomeView,
     renderLoginView,
     renderCartView,
-    renderProductsView,
     renderRegisterView
 };

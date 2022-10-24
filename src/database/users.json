@@ -1,0 +1,17 @@
+[
+    {
+        "userName": "Medro",
+        "email": "pedro@gmail.com",
+        "password": "$2b$10$5QRXZGlsg.ZqCct3T4vCPuWmx6N7kc7do2R6M1rlQkJvKLhw2IyxC"
+    },
+    {
+        "userName": "Marco",
+        "email": "mralbertini@gmail.com",
+        "password": "$2b$10$uC0TXGoJNk5aXTra8m48Zulh8wM2rPwZFHzIHRbaaNoUaqa/lVvZe"
+    },
+    {
+        "userName": "Admin",
+        "email": "Admin@gmail.com",
+        "password": "$2b$10$CDn6HExwlO2Lp2G/F8q13O5aCMbKtYYpRZ3gJzhUmSrAPgP8yyRqe"
+    }
+]
