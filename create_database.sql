@@ -52,4 +52,12 @@ VALUES
 (3,
 'Botas',
 'Dainses Torque In',
-200);
+200),
+(4,
+'Campera',
+'Dainese Touring',
+230),
+(5,
+'Pantalon',
+'Dainses All Weather',
+280),;
