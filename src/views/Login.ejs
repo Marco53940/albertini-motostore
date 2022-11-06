@@ -17,10 +17,10 @@
         />
       </div>
       <div class="login">
-        <form class="login-form">
-            <input class="login-input" type="text" name="email" placeholder="Email">
+        <form class="login-form" action="/login" method="POST">
+            <input class="login-input" type="text" name="usernameOrEmail" placeholder="Email o Usuario">
             <input class="login-input" type="password" name="password" placeholder="Password">
-            <input type="button" class="login-buttons" value="Ingresar">
+            <input type="submit" class="login-buttons" value="Ingresar">
         </form>
         <button class="login-buttons">Registrarse</button>
         <button class="login-buttons">Olvide mi contraseña</button>

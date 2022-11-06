@@ -16,15 +16,25 @@
           alt="main-logo"
         />
       </div>
+       <div style="display: flex; ">     
+        <ul>
+        <% for(var i=0; i<errores.length; i++) {%>
+           <li><%= errores[i].msg %></li>
+        <% } %>
+        </ul>
+      </div>      
+
       <div class="login">
-        <form class="login-form">
+        <form class="login-form" action="/register" method="POST" >
             <input class="login-input" type="text" name="name" placeholder="Nombre">
-            <input class="login-input" type="text" name="last-name" placeholder="Apellido">
+            <input class="login-input" type="text" name="lastname" placeholder="Apellido">
             <input class="login-input" type="text" name="email" placeholder="E-mail">
             <input class="login-input" type="text" name="birthday" placeholder="Fecha de nacimiento">
-            <input class="login-input" type="text" name="email" placeholder="Contraseña">
+            <input class="login-input" type="text" name="username" placeholder="Nombre de Usuario">
+            <input class="login-input" type="password" name="password" placeholder="Contraseña">
+            <input class="login-input" type="password" name="re_password" placeholder="Repetir Contraseña">
             
-            <input type="button" class="login-buttons" value="Ingresar">
+            <input type="submit" class="login-buttons" value="Ingresar">
         </form>
       </div>
     </main>

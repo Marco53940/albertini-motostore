@@ -1,17 +1,1 @@
-[
-    {
-        "userName": "Medro",
-        "email": "pedro@gmail.com",
-        "password": "$2b$10$5QRXZGlsg.ZqCct3T4vCPuWmx6N7kc7do2R6M1rlQkJvKLhw2IyxC"
-    },
-    {
-        "userName": "Marco",
-        "email": "mralbertini@gmail.com",
-        "password": "$2b$10$uC0TXGoJNk5aXTra8m48Zulh8wM2rPwZFHzIHRbaaNoUaqa/lVvZe"
-    },
-    {
-        "userName": "Admin",
-        "email": "Admin@gmail.com",
-        "password": "$2b$10$CDn6HExwlO2Lp2G/F8q13O5aCMbKtYYpRZ3gJzhUmSrAPgP8yyRqe"
-    }
-]
+[{"id":1,"name":"Mario","lastname":"Perez","username":"Medro","email":"pedro@gmail.com","birthday":"1-1-1000","password":"$2b$10$5QRXZGlsg.ZqCct3T4vCPuWmx6N7kc7do2R6M1rlQkJvKLhw2IyxC"},{"id":2,"name":"Marco","lastname":"Albertini","username":"Marco","email":"mralbertini@gmail.com","birthday":"1-1-1000","password":"$2b$10$66zB63k.oDOYChKChqXzDu1/hBchq0Z8.BBlalchu4bz4RTQSFP9G"},{"id":3,"name":"Admin","lastname":"Admin","username":"Admin","email":"Admin@gmail.com","birthday":"1-1-1000","password":"$2b$10$CDn6HExwlO2Lp2G/F8q13O5aCMbKtYYpRZ3gJzhUmSrAPgP8yyRqe"},{"id":4,"name":"Prueba","lastname":"Prueba","email":"prueba@mail.com","birthday":"1-1-1000","username":"prueba","password":"$2b$10$/shTf7YMQ3Y6a77eaeOH6e.fr4S7Vofr.MYHr1KPKgWt4U0C6h4By"},{"id":5,"name":"pp","lastname":"pp","email":"pp@pp.com","birthday":"1-1-1000","username":"pp","password":"$2b$10$76tO16DIlimDUexevmAIPeDsDZzbQmujrTRexYO7PgZgk7aAaxd2G"},{"id":6,"name":"","lastname":"","email":"","birthday":"","username":"","password":"$2b$10$W2KTqhpp5Ck5ACia.or6KehWlXiz3h5YXxejdkcUaVv6fryT/.Eja"},{"id":7,"name":"asd","lastname":"asd","email":"asd@asd.com","birthday":"2022-11-22","username":"Marco2","password":"$2b$10$wZE/7B4lZNcHQm86ZsnRKO4tX5lMaxnUNnKaVwmIvxC3We73RQ4pG"}]

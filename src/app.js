@@ -7,6 +7,7 @@ const cookie = require('cookie-parser');
 const dotEnv = require('dotenv');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
+const { body, validationResult } = require('express-validator');
 const unDia = 1000 * 60 * 60 *24;
 dotEnv.config();
 
@@ -33,14 +34,6 @@ app.use("/css", express.static(path.resolve(__dirname,"../public/css")));
 app.use("/images", express.static(path.resolve(__dirname,"../public/assets/images")));
 app.use(require('./routes/home'));
 app.use(require('./routes/product'));
-
-app.get('/hash', (req,res) => {
-    const { password } = req.query;
-    const passwordHashed = bcrypt.hashSync(password, 10);
-
-    return res.send(passwordHashed);
-})
-
 app.use ((req, res , next) => {
     res.status(404).render("404NotFound")
 })

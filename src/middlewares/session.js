@@ -17,11 +17,9 @@ const validateNoSession = (req, res, next) => {
     next();
 }
 
-const registerUser = (req, res, next) => {
-    
-}
+
 
 module.exports = {
     validateSession,
-    validateNoSession
+    validateNoSession    
 }

@@ -5,7 +5,7 @@ const readUsers = () => {
 
     const Users = fs.readFileSync(path.resolve(__dirname,"../database/users.json"));
 
-    console.log('Useros leidos con exito');
+    console.log('Usuarios leidos con exito');
 
     return JSON.parse(Users);
 

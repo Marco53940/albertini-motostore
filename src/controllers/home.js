@@ -14,7 +14,9 @@ const renderLoginView = (req, res) => {
 }
 
 const renderRegisterView = (req, res) => {
-    return res.render('Register.ejs');
+    console.log('aca de nuevo');
+    return res.render('Register',
+    errores = []);
 }
 
 
