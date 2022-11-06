@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const users = require("../services/user");
 const { validationResult } = require("express-validator");
+const userDb = require('../../models').users;
 
 const login = (req, res) => {
   const { usernameOrEmail, password } = req.body;
@@ -68,8 +69,18 @@ const logout = (req, res) => {
   return res.redirect("/login");
 };
 
+const find = (req, res) => {
+  return userDb.findOne({
+    where: {
+      id: req.params.id
+    }
+  }).then(user => res.status(200).send(user))
+  .catch(error => res.status(400).send(error));
+}
+
 module.exports = {
   login,
   logout,
   register,
+  find
 };

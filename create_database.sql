@@ -1,13 +1,15 @@
 CREATE SCHEMA `motostore` ;
 
 CREATE TABLE `motostore`.`users` (
-  `id_user` INT NOT NULL,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   `lastname` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `username` VARCHAR(100) NULL,
   `password` VARCHAR(100) NULL,
   `birthday` VARCHAR(45) NULL,
+  `createdAt` VARCHAR(45) NULL,
+  `updatedAt` VARCHAR(45) NULL,
   PRIMARY KEY (`id_user`));
 
  
@@ -29,10 +31,12 @@ VALUES
 '30-10-1989');
 
 CREATE TABLE `motostore`.`products` (
-  `id_product` INT NOT NULL,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   `description` VARCHAR(45) NULL,
-  `price` INT NULL,
+  `price` INT NULL,  
+  `createdAt` VARCHAR(45) NULL,
+  `updatedAt` VARCHAR(45) NULL,
   PRIMARY KEY (`id_product`));
 
  INSERT INTO `motostore`.`products`
