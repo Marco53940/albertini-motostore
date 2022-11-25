@@ -61,5 +61,14 @@
     "birthday": "2022-11-22",
     "username": "Marco2",
     "password": "$2b$10$wZE/7B4lZNcHQm86ZsnRKO4tX5lMaxnUNnKaVwmIvxC3We73RQ4pG"
+  },
+  {
+    "id": 8,
+    "name": "Usuario",
+    "lastname": "Apellido",
+    "email": "email@email.com",
+    "birthday": "10/10/2020",
+    "username": "Usuario",
+    "password": "$2b$10$dhIrckg4pvrH7ICg.C2sR.rirx4Klmfs1tnp91ggNh18pfb.mJ2Ka"
   }
 ]

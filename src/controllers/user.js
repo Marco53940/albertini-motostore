@@ -1,24 +1,17 @@
 const bcrypt = require("bcrypt");
-const users = require("../services/user");
 const { validationResult } = require("express-validator");
-const userDb = require('../../models').users;
+const userDb = require('../../models').User;
 
-const login = (req, res) => {
+const login = async (req, res) => {
   const { usernameOrEmail, password } = req.body;
-
-  const user = users
-    .readUsers()
-    .filter(
-      (u) => u.email === usernameOrEmail || u.username === usernameOrEmail
-    );
-
-  if (user.length == 0) {
-    return res.send("Usuario incorrecto");
-  }
-
-  const userData = user[0];
-
-  const isValidPassword = bcrypt.compareSync(password, userData.password);
+  let user;
+  try{
+    const users = await userDb.findAll();
+    console.log(users);
+    user = users.filter(data => data.username === usernameOrEmail || data.email === usernameOrEmail )
+    if(user.length){      
+      const userData = user[0];
+      const isValidPassword = bcrypt.compareSync(password, userData.password);
 
   if (!isValidPassword) {
     return res.send("Contraseña incorrecta");
@@ -29,9 +22,19 @@ const login = (req, res) => {
   req.session.userData = userData;
 
   return res.redirect("/home");
+    }
+    else {
+      return res.send("Usuario incorrecto");
+    }
+  }
+  catch (error){
+    console.log(error);
+  }
+
+  
 };
 
-const register = (req, res, next) => {
+const register = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     console.log(errors);
@@ -42,24 +45,34 @@ const register = (req, res, next) => {
 
   const { name, lastname, email, birthday, password, username } = req.body;
 
-  const user = users
-    .readUsers()
-    .filter((u) => u.email === email || u.username === username);
+  try{
+      const users = await userDb.findAll();
+      console.log(users);
+      if(users){
+        const result = users.filter(data => data.username === username || data.email === email )
+        if (result.length > 0) {
+          return res.send("Usuario ya creado");
+        }
+      }
 
-  if (user.length > 0) {
-    return res.send("Usuario ya creado");
-  }
+      const User = {
+        name: name,
+        lastname: lastname,
+        email: email,
+        birthday: birthday,
+        username: username,
+        password: bcrypt.hashSync(password, 10),
+      };
+    
+      await userDb.create(User);
+    }
+    catch (error){
+      console.log(error);
+    }
 
-  const User = {
-    name: name,
-    lastname: lastname,
-    email: email,
-    birthday: birthday,
-    username: username,
-    password: bcrypt.hashSync(password, 10),
-  };
 
-  users.createUser(User);
+
+
   next();
 };
 

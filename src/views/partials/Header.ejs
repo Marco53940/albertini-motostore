@@ -2,8 +2,13 @@
     <h2 class="menu-inicio" style="color: var(--primary)">MotoStore</h2>
     <ul class="menu-inicio">
       <li><a href="/home" style="text-decoration: none; color: var(--secondary)">Inicio</a></li>
-      <li><a href="/home" style="text-decoration: none; color: var(--secondary)">Productos</a></li>
+      <li><a href="/products" style="text-decoration: none; color: var(--secondary)">Productos</a></li>
       <li><a href="/login" style="text-decoration: none; color: var(--secondary)">Ingresar</a></li>
+      <li><a href="/cart" style="text-decoration: none; color: var(--secondary)" id="cartQty">Carrito</a></li>
     </ul>
     <div class="menu-burger"><i class="material-icons">menu</i></div>
+    <script>
+      const form = document.getElementById('cartQty');
+      form.addEventListener('DOMContentLoaded', (e) => { console.log('Elemento añadido') }, false)
+    </script>
   </header>

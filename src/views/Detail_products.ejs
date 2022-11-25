@@ -4,26 +4,34 @@
         <%-include('./partials/Head.ejs');%>
     </head>
   <body>
+    <script src="/scripts/updateCart.js"></script>
+    <script src="/scripts/addCart.js"></script>
+    <script>
+      const add = function (event) {
+       alert('Añadido al carrito!')
+                 addToCart(event);
+               };
+     </script>
     <header>
         <%- include('./partials/Header.ejs');%>
     </header>
-    <section class="producto">      
+    <section id="<%- product.name %>" price="<%- product.price %>" image="/images/<%- product.image %>" class="producto">      
       <div class="product-image">        
-        <img src="/images/product_1.jpg" alt="image-producto" />
+        <img src="/images/<%- product.image %>" alt="Imagen del producto: <%- product.name %>">
       </div>
       <div class="product-description">
         <h2 class="product-title">AGV PistaGRP</h2>
         <div>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis veritatis accusamus unde facilis repudiandae debitis quis rerum repellendus tempore exercitationem, aspernatur itaque rem suscipit minus fuga pariatur totam amet voluptatibus.</p>
+          <p><%- product.description %></p>
         </div>
         <div>
-          <p>$999.99</p>
+          <p>$<%- product.price %></p>
         </div>          
         <div class="buttons">
-          <button><i class="material-icons">shopping_cart</i></button>
-          <button>comprar</button>
+          <button onclick='add("<%- product.name %>")'><i class="material-icons">shopping_cart</i></button>
+          <button onclick="location.href='/cart';">comprar</button>
         </div>
-      </div>
+      </div>  
     </section>
     <footer>
         <footer>

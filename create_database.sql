@@ -1,7 +1,7 @@
 CREATE SCHEMA `motostore` ;
 
 CREATE TABLE `motostore`.`users` (
-  `id` INT NOT NULL,
+  `id_user` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   `lastname` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
@@ -31,9 +31,10 @@ VALUES
 '30-10-1989');
 
 CREATE TABLE `motostore`.`products` (
-  `id` INT NOT NULL,
+  `id_product` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   `description` VARCHAR(45) NULL,
+  `image` VARCHAR(100) NULL,
   `price` INT NULL,  
   `createdAt` VARCHAR(45) NULL,
   `updatedAt` VARCHAR(45) NULL,

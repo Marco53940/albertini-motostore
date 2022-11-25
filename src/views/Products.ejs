@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%-include('./partials/Head.ejs');%>
+</head>
+
+<body>
+  <script src="/scripts/updateCart.js"></script>
+  <script src="/scripts/addCart.js"></script>
+  <script>
+   const add = function (event) {
+    alert('Añadido al carrito!')
+              addToCart(event);
+            };
+  </script>
+    <header>
+        <%- include('./partials/Header.ejs');%>
+    </header>
+    <main>
+        <div class="logo">
+          <img
+            style="margin: 2px; max-width: 8%; border-radius: 50%"
+            id="main-logo"
+            src="/images/MotoStore-logos.jpeg"
+            alt="main-logo"
+          />
+        </div>
+        <h2>Productos</h2>
+        <div class="listado">
+          <% productos.forEach(product => { %>
+        
+            <article>
+    
+                <div class="picture">
+                    <img src="/images/<%- product.image %>" alt="Imagen del producto: <%- product.name %>">
+                </div>
+    
+                <div class="product-description">
+    
+                    <h2><%- product.name %></h2>
+                    <p><%- product.description %></p>
+                    <hr>
+                    <h1 id="<%- product.name %>" price="<%- product.price %>" image="/images/<%- product.image %>">$ <%- product.price %></h1>
+    
+                </div>
+    
+                <div class="buttons">
+                  <button  onclick='add("<%- product.name %>")'><i class="material-icons">shopping_cart</i></button>
+                  <button onclick="location.href='/product/<%- product.id %>';">Ver Mas</button>
+                </div>
+    
+            </article>
+    
+        <% }) %>        
+        </div>
+      </main>
+</body>
+<footer>
+    <%-include('./partials/Footer.ejs');%>
+</footer>
+
+</html>

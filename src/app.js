@@ -13,6 +13,7 @@ dotEnv.config();
 
 
 app.set("views", path.resolve(__dirname,"./views"));
+app.use(express.static(path.join(__dirname, 'scripts')))
 app.set("view engine","ejs");
 
 app.use(session({
@@ -29,7 +30,7 @@ app.use(cookie());
 
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
-
+app.use("/scripts", express.static(path.resolve(__dirname,"../src/views/scripts")))
 app.use("/css", express.static(path.resolve(__dirname,"../public/css")));
 app.use("/images", express.static(path.resolve(__dirname,"../public/assets/images")));
 app.use(require('./routes/home'));
@@ -39,5 +40,5 @@ app.use ((req, res , next) => {
 })
 
 
-app.listen(3000, () => console.log('Proyecto en el puerto 3000 ' +  path.resolve(__dirname,"../src/database/users.js")))
+app.listen(3000, () => console.log('Proyecto en el puerto 3000 '))
 

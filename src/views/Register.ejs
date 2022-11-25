@@ -4,8 +4,9 @@
         <%-include('./partials/Head.ejs');%>
     </head>
   <body>
+      <script src="/scripts/validateRegister.js"></script> 
     <header>
-        <%- include('./partials/Header.ejs');%>
+        <%- include('./partials/Header.ejs');%>        
     </header>
     <main>
       <div class="logo">
@@ -25,7 +26,7 @@
       </div>      
 
       <div class="login">
-        <form class="login-form" action="/register" method="POST" >
+        <form name=register class="login-form" action="/register" method="POST" >
             <input class="login-input" type="text" name="name" placeholder="Nombre">
             <input class="login-input" type="text" name="lastname" placeholder="Apellido">
             <input class="login-input" type="text" name="email" placeholder="E-mail">
@@ -34,7 +35,7 @@
             <input class="login-input" type="password" name="password" placeholder="Contraseña">
             <input class="login-input" type="password" name="re_password" placeholder="Repetir Contraseña">
             
-            <input type="submit" class="login-buttons" value="Ingresar">
+            <input type="button" class="login-buttons" value="Registrarse" onclick="valida_envia()">
         </form>
       </div>
     </main>

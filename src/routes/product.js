@@ -1,12 +1,13 @@
 const express = require('express');
-const { getAll, getOne, create, update, deleteOne, getAllWithView, renderProductView } = require('../controllers/product');
+const { getAll, getOne, create, update, deleteOne, renderProductView, renderProductsView } = require('../controllers/product');
 const router = express.Router();
 
-router.get('/products-view', renderProductView)
 
-router.get('/products', getAll);
+router.get('/products', renderProductsView);
 
 router.get('/products/:id', getOne);
+
+router.get('/product/:id', renderProductView);
 
 router.post('/products', create);
 

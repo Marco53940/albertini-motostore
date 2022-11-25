@@ -232,7 +232,6 @@ main {
     color: var(--terceary);
     border-radius: 10px;
     border-color: var(--secondary);
-    width: 35%;
     margin: 0 0 5% 0;
     padding: 2%;
 }
@@ -334,6 +333,7 @@ main {
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
     
     }
 
@@ -421,6 +421,15 @@ main {
     
     .checkout-buttons {
         width: 10%;
+    }
+
+    .login-buttons {
+        background-color: var(--secondary);
+        color: var(--terceary);
+        border-radius: 10px;
+        border-color: var(--secondary);
+        margin: 0 0 5% 0;
+        padding: 2%;
     }
 
 

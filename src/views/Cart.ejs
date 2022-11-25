@@ -1,88 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <%-include('./partials/Head.ejs');%>
-</head>
+  </head>
 
-<body>
-    <header>
-        <%- include('./partials/Header.ejs');%>
-    </header>
-    <section class="checkout">
-        <div class="products-checkout-list">
-          <div class="product-image-checkout">
-            <img src="/images/product_1.jpg" alt="image-producto" />
-          </div>
-          <div class="product-qty">
-            <div>
-              <p>AGV Pista GPR</p>
-            </div>
-            <div class="product-qty-buttons">
-              <button class="qty-buttons"><i class="material-icons">remove</i></button>
-              <p style="width: 10%; padding-left: 5%;">1</p>
-              <button class="qty-buttons"><i class="material-icons">add</i></button>
-            </div>
-          </div>
-          <div class="product-price">
-            <div>
-              <button class="checkout-buttons"><i class="material-icons">delete</i></button>
-              <p>$999</p>            
-            </div>
-          </div>
-         </div>
-         <div class="products-checkout-list">
-          <div class="product-image-checkout">
-            <img src="/images/product_1.jpg" alt="image-producto" />
-          </div>
-          <div class="product-qty">
-            <div>
-              <p>AGV Pista GPR</p>
-            </div>
-            <div class="product-qty-buttons">
-              <button class="qty-buttons"><i class="material-icons">remove</i></button>
-              <p style="width: 10%; padding-left: 5%;">1</p>
-              <button class="qty-buttons"><i class="material-icons">add</i></button>
-            </div>
-          </div>
-          <div class="product-price">
-            <div>
-              <button class="checkout-buttons"><i class="material-icons">delete</i></button>
-              <p>$999</p>            
-            </div>
-          </div>
-         </div>
-         <div class="products-checkout-list">
-          <div class="product-image-checkout">
-            <img src="/images/product_1.jpg" alt="image-producto" />
-          </div>
-          <div class="product-qty">
-            <div>
-              <p>AGV Pista GPR</p>
-            </div>
-            <div class="product-qty-buttons">
-              <button class="qty-buttons"><i class="material-icons">remove</i></button>
-              <p style="width: 10%; padding-left: 5%;">1</p>
-              <button class="qty-buttons"><i class="material-icons">add</i></button>
-            </div>
-          </div>
-          <div class="product-price">
-            <div>
-              <button class="checkout-buttons"><i class="material-icons">delete</i></button>
-              <p>$999</p>            
-            </div>
-          </div>
-         </div>
-        <div class="products-total">
-          <p>TOTAL</p>
-          <p>$$$$</p>
-          <button class="pay-button">PAGAR</button>
-        </div>
-      </section>
+  <body>
+    <script src="/scripts/updateCart.js"></script>
+    <script src="/scripts/addCart.js"></script>
+    <script src="/scripts/removeCart.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const productos = JSON.parse(localStorage.getItem("carrito"));
+        let totalPrice = 0;
+        if (productos.length > 0) {
+          const DOMcarrito = document.getElementById("listado");
+          DOMcarrito.textContent = "";
+          productos.forEach((element) => {
+            totalPrice += +element.total;
+            const miNodoPrincipal = document.createElement("div");
+            miNodoPrincipal.classList.add("products-checkout-list");
+            miNodoPrincipal.setAttribute("price", element.price);
+            miNodoPrincipal.setAttribute("image", element.image);
+            miNodoPrincipal.setAttribute("id", element.name);
+            // Imagen
+            const miNodoImagenDiv = document.createElement("div");
+            miNodoImagenDiv.classList.add("products-checkout-list");
+            const miNodoImagen = document.createElement("img");
+            miNodoImagen.setAttribute("src", element.image);
+            miNodoImagenDiv.appendChild(miNodoImagen);
+            // Item
+            const miNodoItemDiv = document.createElement("div");
+            miNodoItemDiv.classList.add("product-qty");
+            const miNodoNameDiv = document.createElement("div");
+            const miNodoName = document.createElement("p");
+            miNodoName.textContent = element.name;
+            miNodoNameDiv.appendChild(miNodoName);
+            // Botones
+            const miNodoBotonesDiv = document.createElement("div");
+            miNodoBotonesDiv.classList.add("product-qty-buttons");
+            const miNodoBotonRemove = document.createElement("button");
+            miNodoBotonRemove.classList.add("qty-buttons");
+            miNodoBotonRemove.onclick = function () {
+              reduceItemFromCart(element.name);
+              window.document.dispatchEvent(
+                new Event("DOMContentLoaded", {
+                  bubbles: true,
+                  cancelable: true,
+                })
+              );
+            };
+            const miNodoIconoRemove = document.createElement("i");
+            miNodoIconoRemove.classList.add("material-icons");
+            miNodoIconoRemove.textContent = "remove";
+            
+            miNodoBotonRemove.appendChild(miNodoIconoRemove);
+            const miNodoQty = document.createElement("p");
+            miNodoQty.style.width = "10%";
+            miNodoQty.style.paddingLeft = "5%";
+            const miNodoBotonAdd = document.createElement("button");
+            miNodoBotonAdd.classList.add("qty-buttons");
+            miNodoBotonAdd.onclick = function () {
+              addToCart(element.name);
+              window.document.dispatchEvent(
+                new Event("DOMContentLoaded", {
+                  bubbles: true,
+                  cancelable: true,
+                })
+              );
+            };
+            const miNodoIconoAdd = document.createElement("i");
+            miNodoIconoAdd.classList.add("material-icons");
+            miNodoIconoAdd.textContent = "add";
+            miNodoBotonAdd.appendChild(miNodoIconoAdd);
+            miNodoBotonesDiv.appendChild(miNodoBotonRemove);
+            miNodoBotonesDiv.appendChild(miNodoQty);
+            miNodoBotonesDiv.appendChild(miNodoBotonAdd);
 
-<footer>
-    <%-include('./partials/Footer.ejs');%>
-</footer>
-</body>
+            // Precio
+            const miNodoPrecioDiv = document.createElement("div");
+            miNodoPrecioDiv.classList.add("product-price");
+            const miNodoBotonDelete = document.createElement("button");
+            miNodoBotonDelete.classList.add("checkout-buttons");
+            miNodoBotonDelete.onclick = function () {
+              removeItemFromCart(element.name);
+              window.document.dispatchEvent(
+                new Event("DOMContentLoaded", {
+                  bubbles: true,
+                  cancelable: true,
+                })
+              );
+            };
+            const miNodoIconoDelete = document.createElement("i");
+            miNodoIconoDelete.classList.add("material-icons");
+            miNodoIconoDelete.textContent = "delete";
+            const miNodoPrecio = document.createElement("div");
+            miNodoPrecio.textContent = `$${element.total}`;
+            miNodoBotonDelete.appendChild(miNodoIconoDelete);
+            miNodoPrecioDiv.appendChild(miNodoBotonDelete);
+            miNodoPrecioDiv.appendChild(miNodoPrecio);
 
+            // Insertamos
+
+            miNodoPrincipal.appendChild(miNodoImagenDiv);
+            miNodoItemDiv.appendChild(miNodoNameDiv);
+            miNodoItemDiv.appendChild(miNodoBotonesDiv);
+            miNodoPrincipal.appendChild(miNodoItemDiv);
+            miNodoPrincipal.appendChild(miNodoPrecioDiv);
+            DOMcarrito.appendChild(miNodoPrincipal);
+          });
+
+          //Total
+          const miNodoCheckoutTotal = document.createElement("div");
+          miNodoCheckoutTotal.classList.add("products-total");
+          const miNodoTotalText = document.createElement("p");
+          miNodoTotalText.textContent = "Total: ";
+          const miNodoTotalPrice = document.createElement("p");
+          miNodoTotalPrice.textContent = `$${totalPrice}`;
+          const miNodoBotonPay = document.createElement("button");
+          miNodoBotonPay.classList.add("pay-button");
+          miNodoBotonPay.textContent = "PAGAR";
+          miNodoCheckoutTotal.appendChild(miNodoTotalText);
+          miNodoCheckoutTotal.appendChild(miNodoTotalPrice);
+          miNodoCheckoutTotal.appendChild(miNodoBotonPay);
+          DOMcarrito.appendChild(miNodoCheckoutTotal);
+        }
+        else {
+          const DOMcarrito = document.getElementById("listado");
+          DOMcarrito.style.paddingLeft = '35%';
+          DOMcarrito.textContent = "Carrito Vacio! Vaya a productos para empezar a comprar!";
+        }
+      });
+    </script>
+    <header><%- include('./partials/Header.ejs');%></header>
+    <section id="listado" class="checkout">
+    </section>
+
+    <footer><%-include('./partials/Footer.ejs');%></footer>
+  </body>
 </html>
