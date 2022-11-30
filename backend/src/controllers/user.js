@@ -34,6 +34,41 @@ const login = async (req, res) => {
   
 };
 
+
+const login_user = async (req, res) => {
+  const { usernameOrEmail, password } = req.body;
+  let user;
+  try{
+    const users = await userDb.findAll();
+    console.log(users);
+    user = users.filter(data => data.username === usernameOrEmail || data.email === usernameOrEmail )
+    if(user.length){      
+      const userData = user[0];
+      const isValidPassword = bcrypt.compareSync(password, userData.password);
+
+  if (!isValidPassword) {
+    return res.status(500).send("Contraseña incorrecta");
+  }
+
+  delete userData.password;
+
+  req.session.userData = userData;
+
+  return res.status(200).send('Login OK');
+    }
+    else {
+      return res.status(500).send("Usuario incorrecto");
+    }
+  }
+  catch (error){
+    console.log(error);
+  }
+
+  
+};
+
+
+
 const register = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -93,6 +128,7 @@ const find = (req, res) => {
 
 module.exports = {
   login,
+  login_user,
   logout,
   register,
   find

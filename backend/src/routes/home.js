@@ -1,6 +1,6 @@
 const express = require('express');
 const { renderCartView, renderHomeView, renderLoginView, renderRegisterView } = require('../controllers/home');
-const { login, logout, register, find } = require ('../controllers/user');
+const { login, login_user, register, find } = require ('../controllers/user');
 const validateUserData = require('../middlewares/register')
 const {validateNoSession, validateSession} = require('../middlewares/session');
 const router = express.Router();
@@ -12,6 +12,8 @@ router.get('/cart', renderCartView);
 router.get('/login',validateNoSession, renderLoginView);
 
 router.post('/login', login);
+
+router.post('/login-user', login_user);
 
 router.get('/register', renderRegisterView);
 

@@ -1,6 +1,6 @@
 # E-Commerce Marco Albertini
 ## Tienda Web de indumentaria para motos y cuatriciclos
-![MotoStoreLogo](public/assets/images/MotoStore-logos.jpeg)
+![MotoStoreLogo](backend/public/assets/images/MotoStore-logos.jpeg)
 #     *MotoStore*
 
 

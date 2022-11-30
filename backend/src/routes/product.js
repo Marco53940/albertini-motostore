@@ -5,16 +5,18 @@ const router = express.Router();
 
 router.get('/products', renderProductsView);
 
+router.get('/allproducts', renderProductsView);
+
 router.get('/products/:id', getOne);
 
 router.get('/product/:id', renderProductView);
 
-router.post('/products', create);
+router.post('/product', create);
 
-router.put('/products/:id', update);
+router.put('/product/:id', update);
 
 router.patch('/products/:id', update);
 
-router.delete('/products/:id', deleteOne);
+router.delete('/product/:id', deleteOne);
 
 module.exports = router;

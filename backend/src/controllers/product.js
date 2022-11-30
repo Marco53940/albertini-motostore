@@ -38,18 +38,20 @@ const renderProductsView = async (req, res) => {
 
 }
 
-const getAll = (req, res) => {
+const getAll = async (req, res) => {
 
-    const products = readProducts();
-
-    if (products.length <= 0) {
-        return res.status(404).json({
-            status: 'error',
-            message: 'no products found'
+    try{
+        const products = await productsdb.findAll();
+        console.log(products);
+        if(!products) products = []
+        return res.render('Products.ejs', {
+            productos: products
         });
+    }   
+    catch (error){
+        console.log(error);
     }
-
-    return res.status(200).json(products);
+    return null;
 
 }
 
@@ -58,7 +60,10 @@ const getOne = async (req, res) => {
     const { id } = req.params;
 
     if (id == null || id == "null") {
-        return res.render('404NotFound.ejs');
+        return res.status(404).json({
+            status: 'error',
+            message: 'ID not valid'
+        });
     }
 
     const product = await productsdb.findOne({ where: { id: id } });
@@ -83,6 +88,7 @@ const create = async (req, res) => {
         description,
         image
     }
+
     try{
         await productsdb.create(product);
         return res.status(201).json({
@@ -101,24 +107,61 @@ const create = async (req, res) => {
 
 }
 
-const update = (req, res) => {
+const update = async (req, res) => {
 
+    const { name, price, description, image, id } = req.body;
+
+    console.log(name, price, description, image, id);
+
+    if (id == null || id == "null") {
+        return res.status(404).json({
+            status: 'error',
+            message: 'ID not valid'
+        });
+    }
+
+    try{
+        await productsdb.update({
+            name: name,
+            price: price,
+            image: image,
+            description: description
+        }, {
+            where: {
+                id: id,
+            }
+        });
+    }
+    catch (error){
+        return res.status(404).json({
+            status: 'error',
+            message: error
+        });
+    }
 }
 
-const deleteOne = (req, res) => {
+const deleteOne = async (req, res) => {
 
     const { id } = req.params;
 
-    if (!productExists(id)) {
-        return res.render('404NotFound.ejs');
+    if (id == null || id == "null") {
+        return res.status(404).json({
+            status: 'error',
+            message: 'ID not valid'
+        });
     }
 
-    deleteProduct(id);
-
-    return res.status(200).json({
-        status: 'success',
-        message: 'product deleted'
-    });
+    try{
+        await productsdb.destroy({
+            where: { id: id },
+          });
+    }
+    catch (error){
+        return res.status(404).json({
+            status: 'error',
+            message: error
+        });
+    }
 
 }
 
