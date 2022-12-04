@@ -9,12 +9,15 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const { body, validationResult } = require('express-validator');
 const unDia = 1000 * 60 * 60 *24;
+const cors = require("cors");
 dotEnv.config();
 
 
 app.set("views", path.resolve(__dirname,"./views"));
 app.use(express.static(path.join(__dirname, 'scripts')))
 app.set("view engine","ejs");
+
+app.use(cors());
 
 app.use(session({
     secret: '123456789',

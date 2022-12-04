@@ -1,22 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
 import {CookieService} from 'ngx-cookie-service'
+import { LoginModule } from './login/login.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AddProductComponent,
-    ProductDetailComponent,
-    ProductListComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    LoginModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
