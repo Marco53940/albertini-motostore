@@ -31,4 +31,14 @@ export class ProductsService {
   updateProduct(Product:Product){
     return this.http.put<Product>(this.Url+"/product/"+Product.id,Product);
   }
+
+  deleteProduct(id:number) {
+    return this.http.delete<any>(this.Url + '/product/'+id);
+  }
+
+  deleteAllProducts() {
+    return this.http.post<any>(this.Url + '/product/all',null);
+  }
+
+
 }

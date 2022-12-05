@@ -211,6 +211,25 @@ const deleteOne = async (req, res) => {
 
 }
 
+const deleteAll = async (req, res) => {
+
+
+    try{
+        productsdb.destroy( {where:{} }, {truncate: true} ). then(() => { return res.status(201).json({
+            status: 'success',
+            message: 'products deleted'
+        }); }). then(() => {});
+        
+    }
+    catch (error){
+        return res.status(404).json({
+            status: 'error',
+            message: error
+        });
+    }
+
+}
+
 
 module.exports = {
     getAll,
@@ -221,5 +240,6 @@ module.exports = {
     renderProductView,
     renderProductsView,
     getAllProducts,
-    getByName
+    getByName,
+    deleteAll
 }

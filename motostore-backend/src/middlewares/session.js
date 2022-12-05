@@ -1,8 +1,10 @@
 
 const validateSession = (req, res, next) => {
 
+    console.log(req.session.userData);
+
     if (!req.session.userData) {
-        return res.redirect('/login');
+        return res.send(401);
     }
 
     next();

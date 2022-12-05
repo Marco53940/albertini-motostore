@@ -10,14 +10,16 @@ import { Router } from "@angular/router";
 export class AppComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) {}
-
+  loggedIn:boolean = false;
+  error:string = "";
   ngOnInit() {
+    this.loggedIn = false;
+    this.error = "";
     console.log("Init!");
     this.isLoggedIn();
   }
 
-  loggedIn = false;
-  error = "";
+
 
   isLoggedIn() {
     if (localStorage.getItem("LOGGED") === 'true') {
@@ -50,5 +52,12 @@ export class AppComponent implements OnInit {
   }
   Buscar() {
     this.router.navigate(["buscar"]);
+  }
+
+  LogOut(){
+    localStorage.setItem("LOGGED_USER", null);
+    localStorage.setItem("LOGGED", null);
+    this.ngOnInit();
+
   }
 }

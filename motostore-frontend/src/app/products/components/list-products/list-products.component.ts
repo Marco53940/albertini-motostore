@@ -22,4 +22,29 @@ export class ListProductsComponent implements OnInit {
     localStorage.setItem("id", product.id.toString());
     this.router.navigate(["editar"]);
   }
+
+  Eliminar(product:Product){
+    localStorage.setItem("id", product.id.toString());
+    this.service.deleteProduct(product.id).subscribe(data =>
+      {
+        if(data.message == 'product deleted'){
+          alert('Producto borrado');
+          this.ngOnInit();
+        }
+      },
+      error => { alert("No se pudo borrar el producto" + error.error.message);});
+  }
+
+  EliminarTodos(){
+    if(confirm('Esta seguro de borrar todos los productos?')){
+      this.service.deleteAllProducts().subscribe(data =>
+        {
+          if(data.message == 'products deleted'){
+            alert('Productos borrados');
+            this.ngOnInit();
+          }
+        },
+        error => { alert("No se pudo borrar el producto" + error.message);});
+    }
+  }
 }
