@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Product } from '../../model/Product';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  product:Product;
 
-  ngOnInit() {
+  constructor(private router:Router, private service:ProductsService) { }
+
+  ngOnInit(): void {
+    this.Cargar();
+    
   }
+
+Cargar(){
+  let id=localStorage.getItem("id2");
+  this.service.getProductId(+id)
+  .subscribe(data=>{
+    this.product=data;
+    console.log("data  id recibida");
+  });
+}
+
+Editar(product:Product){
+  localStorage.setItem("id2", product.id.toString());
+  this.router.navigate(["editar"]);
+}
 
 }

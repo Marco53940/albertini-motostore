@@ -47,17 +47,17 @@ const login_user = async (req, res) => {
       const isValidPassword = bcrypt.compareSync(password, userData.password);
 
   if (!isValidPassword) {
-    return res.status(500).send("Contraseña incorrecta");
+    return res.status(401).send({"msg" : "Contraseña incorrecta"});
   }
 
   delete userData.password;
 
   req.session.userData = userData;
 
-  return res.status(200).send('Login OK');
+  return res.status(200).send(userData);
     }
     else {
-      return res.status(500).send("Usuario incorrecto");
+      return res.status(401).send({"msg" : "Usuario incorrecto" });
     }
   }
   catch (error){

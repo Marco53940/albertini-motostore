@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private http:HttpClient, private cookies: CookieService) { }
 
   Url='http://localhost:3000/login-user';
-  
+
   login(user: any){
     return this.http.post<any>(this.Url, user);
   }
@@ -26,6 +26,8 @@ export class AuthService {
   }
 
   logout() {
-
+    this.cookies.set('USERLOGGED',
+    null);
+    this.cookies.set('LOGGED', null);
   }
 }

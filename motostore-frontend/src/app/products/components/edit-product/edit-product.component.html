@@ -2,7 +2,7 @@
   <div class="card">
       <div class="card-header">
           <h3>
-              Agregar productos
+              Editar producto
           </h3>
           <div class="card-body">
               <form action="">
@@ -25,7 +25,7 @@
                       
                       <input [(ngModel)]="product.image" name="image" type="text" class="form-control">
                   </div>
-                  <button (click)="Guardar()" class="btn btn-danger" style="margin-top: 20px;">Guardar</button>
+                  <button (click)="Guardar(product)" class="btn btn-danger" style="margin-top: 20px;">Guardar</button>
               </form>
           </div>
       </div>

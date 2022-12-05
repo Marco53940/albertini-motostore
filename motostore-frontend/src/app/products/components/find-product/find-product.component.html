@@ -1,0 +1,20 @@
+<div class="container col-md-6">
+  <div class="card">
+      <div class="card-header">
+          <h3>
+              Buscar producto
+          </h3>
+          <div class="card-body">
+              <form action="">
+                  
+                  <div class="form-group">
+                      <label for="">Nombre Producto:</label>
+                      
+                      <input [(ngModel)]="product.name" name="name" type="text" class="form-control">
+                  </div>                
+                  <button (click)="Buscar(product)"  class="btn btn-danger" style="margin-top: 20px;">Buscar</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

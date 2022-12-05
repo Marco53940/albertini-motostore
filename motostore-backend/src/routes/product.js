@@ -1,13 +1,15 @@
 const express = require('express');
-const { getAll, getOne, create, update, deleteOne, renderProductView, renderProductsView } = require('../controllers/product');
+const { getOne, create, update, deleteOne, renderProductView, renderProductsView, getAllProducts, getByName } = require('../controllers/product');
 const router = express.Router();
 
 
 router.get('/products', renderProductsView);
 
-router.get('/allproducts', renderProductsView);
+router.get('/allproducts', getAllProducts);
 
 router.get('/products/:id', getOne);
+
+router.get('/products/name/:name', getByName);
 
 router.get('/product/:id', renderProductView);
 
