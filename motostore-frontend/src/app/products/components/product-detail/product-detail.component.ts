@@ -33,4 +33,16 @@ Editar(product:Product){
   this.router.navigate(["editar"]);
 }
 
+Eliminar(product:Product){
+  localStorage.setItem("id", product.id.toString());
+  this.service.deleteProduct(product.id).subscribe(data =>
+    {
+      if(data.message == 'product deleted'){
+        alert('Producto borrado');
+        this.router.navigate(["listar"]);
+      }
+    },
+    error => { alert("No se pudo borrar el producto" + error.error.message);});
+}
+
 }
