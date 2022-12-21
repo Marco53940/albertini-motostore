@@ -14,8 +14,8 @@ function valida_envia(){
           return 0;
    }
 
-   if (document.register.password != 
-    document.register.re_password){
+   if (document.register.password.value !== 
+    document.register.re_password.value){
       alert("Las contraseñas deben coincidir")
       document.register.password.focus()
       return 0;

@@ -5,9 +5,11 @@ const validateUserData = require('../middlewares/register')
 const {validateNoSession, validateSession} = require('../middlewares/session');
 const router = express.Router();
 
-router.get('/home', validateSession, renderHomeView);
+router.get('/home', renderHomeView);
 
-router.get('/cart', renderCartView);
+router.get('/', renderHomeView);
+
+router.get('/cart', validateSession, renderCartView);
 
 router.get('/login',validateNoSession, renderLoginView);
 

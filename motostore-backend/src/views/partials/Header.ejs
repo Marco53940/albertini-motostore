@@ -1,14 +1,70 @@
-<header>
-    <h2 class="menu-inicio" style="color: var(--primary)">MotoStore</h2>
-    <ul class="menu-inicio">
-      <li><a href="/home" style="text-decoration: none; color: var(--secondary)">Inicio</a></li>
-      <li><a href="/products" style="text-decoration: none; color: var(--secondary)">Productos</a></li>
-      <li><a href="/login" style="text-decoration: none; color: var(--secondary)">Ingresar</a></li>
-      <li><a href="/cart" style="text-decoration: none; color: var(--secondary)" id="cartQty">Carrito</a></li>
-    </ul>
-    <div class="menu-burger"><i class="material-icons">menu</i></div>
-    <script>
-      const form = document.getElementById('cartQty');
-      form.addEventListener('DOMContentLoaded', (e) => { console.log('Elemento añadido') }, false)
-    </script>
-  </header>
+
+  <h2 class="menu-inicio" style="color: var(--primary)">MotoStore</h2>
+  <ul class="menu-inicio">
+    <li>
+      <a href="/home" style="text-decoration: none; color: var(--secondary)"
+        >Inicio</a
+      >
+    </li>
+    <li>
+      <a href="/products" style="text-decoration: none; color: var(--secondary)"
+        >Productos</a
+      >
+    </li>
+    <li>
+      <a href="/login" style="text-decoration: none; color: var(--secondary)"
+        >Ingresar</a
+      >
+    </li>
+    <li>
+      <a
+        href="/cart"
+        style="text-decoration: none; color: var(--secondary)"
+        id="cartQty"
+        >Carrito</a
+      >
+    </li>
+  </ul>
+
+  <div class="menu-burger">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()"
+      ><i class="material-icons">menu</i></a
+    >
+    <div id="myLinks" style="display:none">
+      <a href="/home" style="text-decoration: none; color: var(--secondary)"
+        >Inicio</a
+      >
+      <a href="/products" style="text-decoration: none; color: var(--secondary)"
+        >Productos</a
+      >
+      <a href="/login" style="text-decoration: none; color: var(--secondary)"
+        >Ingresar</a
+      >
+      <a
+        href="/cart"
+        style="text-decoration: none; color: var(--secondary)"
+        id="cartQty"
+        >Carrito</a
+      >
+    </div>
+  </div>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "flex") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "flex";
+        x.style.flexDirection = "column";
+      }
+    }
+    const form = document.getElementById("cartQty");
+    form.addEventListener(
+      "DOMContentLoaded",
+      (e) => {
+        console.log("Elemento añadido");
+      },
+      false
+    );
+  </script>
+

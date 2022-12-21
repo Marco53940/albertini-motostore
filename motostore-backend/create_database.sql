@@ -1,7 +1,7 @@
 CREATE SCHEMA `motostore` ;
 
 CREATE TABLE `motostore`.`users` (
-  `id_user` INT NOT NULL,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   `lastname` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
@@ -14,7 +14,7 @@ CREATE TABLE `motostore`.`users` (
 
  
  INSERT INTO `motostore`.`users`
-(`id_user`,
+(`id`,
 `name`,
 `lastname`,
 `email`,
@@ -31,7 +31,7 @@ VALUES
 '30-10-1989');
 
 CREATE TABLE `motostore`.`products` (
-  `id_product` INT NOT NULL,
+  `id` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   `description` VARCHAR(45) NULL,
   `image` VARCHAR(100) NULL,
@@ -41,21 +41,25 @@ CREATE TABLE `motostore`.`products` (
   PRIMARY KEY (`id_product`));
 
  INSERT INTO `motostore`.`products`
-(`id_product`,
+(`id`,
 `name`,
 `description`,
+`image`,
 `price`)
 VALUES
 (1,
 'Casco',
 'Agv Corsa',
+'img_1.jpg'
 300),
 (2,
 'Guantes',
 'Dainese Ultra Corsa',
+'img_2.jpg',
 10),
 (3,
 'Botas',
+'img_3.jpg',
 'Dainses Torque In',
 200),
 (4,
@@ -64,5 +68,6 @@ VALUES
 230),
 (5,
 'Pantalon',
+'img_1.jpg',
 'Dainses All Weather',
 280),;
