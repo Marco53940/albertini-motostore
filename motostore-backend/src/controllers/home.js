@@ -15,7 +15,7 @@ const renderLoginView = (req, res) => {
 
 const renderRegisterView = (req, res) => {
     return res.render('Register',
-    errores = []);
+    error = []);
 }
 
 const renderProductsView = (req, res) => {
