@@ -4,7 +4,7 @@ const validateSession = (req, res, next) => {
     console.log(req.session.userData);
 
     if (!req.session.userData) {
-        return res.send(401);
+        return res.render('401NotAuthorized');
     }
 
     next();

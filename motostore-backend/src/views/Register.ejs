@@ -17,15 +17,11 @@
           alt="main-logo"
         />
       </div>
-       <div style="display: flex; ">     
-        <ul>
-        <% for(var i=0; i<errores.length; i++) {%>
-           <li><%= errores[i].msg %></li>
-        <% } %>
-        </ul>
-      </div>      
-
-      <div class="login">
+      <div style="text-align: center; ">
+        <br><br> 
+         <%=error%>
+        </div>
+        <div class="login">
         <form name=register class="login-form" action="/register" method="POST" >
             <input class="login-input" type="text" name="name" placeholder="Nombre">
             <input class="login-input" type="text" name="lastname" placeholder="Apellido">

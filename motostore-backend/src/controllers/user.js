@@ -24,7 +24,7 @@ const login = async (req, res) => {
   return res.redirect("/home");
     }
     else {
-      return res.send("Usuario incorrecto");
+      return res.render('Errors', {error : "Usuario incorrecto"});
     }
   }
   catch (error){
@@ -74,7 +74,7 @@ const register = async (req, res, next) => {
   if (!errors.isEmpty()) {
     console.log(errors);
     return res.render('Register', {
-      errores: errors.errors
+      error: errors.errors
     });
   }
 
@@ -86,7 +86,7 @@ const register = async (req, res, next) => {
       if(users){
         const result = users.filter(data => data.username === username || data.email === email )
         if (result.length > 0) {
-          return res.send("Usuario ya creado");
+          return res.render('Errors', {error : "Usuario ya existente"});
         }
       }
 
@@ -103,6 +103,9 @@ const register = async (req, res, next) => {
     }
     catch (error){
       console.log(error);
+      return res.render('Register', {
+        error: error
+      });
     }
 
 

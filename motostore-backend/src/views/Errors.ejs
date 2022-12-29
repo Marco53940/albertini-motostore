@@ -7,8 +7,10 @@
     <header>
         <%- include('./partials/Header.ejs');%>
     </header>
-    <p style="text-align: center;">No se ha encontrado la pagina. Volver al <a href="/home">inicio</a
-        ></p>
+    <div style="display: flex; text-align: center; ">     
+        <%= error %>
+      </div> 
+      <p style="text-align: center;"> Volver al <a href="/home">inicio</a></p>
     <footer>
         <%-include('./partials/Footer.ejs');%>
     </footer>
